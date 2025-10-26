@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { ArabicLettersAnimation } from "@/components/ArabicLettersAnimation";
+import { IslamicSymbolsAnimation } from "@/components/IslamicSymbolsAnimation";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const HeroSection = () => {
   const [heroVideo, setHeroVideo] = useState<string | null>(null);
@@ -51,8 +53,16 @@ export const HeroSection = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Islamic Symbols Background */}
+      <IslamicSymbolsAnimation />
+      
       {/* Arabic Letters Animation */}
       <ArabicLettersAnimation />
+      
+      {/* Theme Toggle */}
+      <div className="fixed top-4 right-4 z-20">
+        <ThemeToggle />
+      </div>
       
       {/* Video Background or Gradient */}
       {heroVideo ? (

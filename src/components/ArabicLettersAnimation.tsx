@@ -42,15 +42,15 @@ export const ArabicLettersAnimation = () => {
   };
 
   return (
-    <div className="fixed right-8 top-20 z-10 flex flex-col gap-2 pointer-events-none">
+    <div className="fixed right-4 md:right-8 top-0 bottom-0 z-10 flex flex-col justify-between py-20 pointer-events-none">
       {arabicLetters.map((letter, index) => (
         <div
           key={index}
-          className="text-4xl font-bold text-white/80 transition-all duration-300"
+          className="text-3xl md:text-4xl font-bold text-foreground/30 dark:text-foreground/40 transition-all duration-300"
           style={{
             opacity: getLetterOpacity(index),
             transform: `translateX(${getLetterOpacity(index) < 0.5 ? '20px' : '0'})`,
-            textShadow: `0 0 20px rgba(255, 255, 255, ${getLetterOpacity(index) * 0.3})`,
+            textShadow: `0 0 20px hsl(var(--gold) / ${getLetterOpacity(index) * 0.3})`,
           }}
         >
           {letter}

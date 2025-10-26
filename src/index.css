@@ -8,6 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    --background: 210 40% 98%;
+    --foreground: 217 33% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 12%;
+
+    --primary: 45 92% 53%;
+    --primary-foreground: 217 33% 12%;
+
+    --secondary: 217 33% 95%;
+    --secondary-foreground: 217 33% 12%;
+
+    --muted: 217 33% 95%;
+    --muted-foreground: 215 20% 40%;
+
+    --accent: 45 92% 53%;
+    --accent-foreground: 217 33% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 85%;
+    --input: 217 33% 85%;
+    --ring: 45 92% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for Ayah Motion Pictures */
+    --gold: 45 92% 53%;
+    --gold-light: 45 92% 70%;
+    --deep-blue: 217 33% 12%;
+    --charcoal: 220 20% 16%;
+    --off-white: 210 40% 98%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 40% 95%) 0%, hsl(217 33% 98%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 92% 53%) 0%, hsl(45 92% 70%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(217 33% 20% / 0.2);
+    --shadow-glow: 0 0 30px hsl(45 92% 53% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
     --background: 217 33% 12%;
     --foreground: 210 40% 98%;
 
@@ -36,26 +87,12 @@ All colors MUST be HSL.
     --input: 217 33% 25%;
     --ring: 45 92% 53%;
 
-    --radius: 0.75rem;
-
-    /* Custom tokens for Ayah Motion Pictures */
-    --gold: 45 92% 53%;
-    --gold-light: 45 92% 70%;
-    --deep-blue: 217 33% 12%;
-    --charcoal: 220 20% 16%;
-    --off-white: 210 40% 98%;
-    
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(217 33% 12%) 0%, hsl(220 20% 16%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 92% 53%) 0%, hsl(45 92% 70%) 100%);
     --gradient-overlay: linear-gradient(180deg, rgba(10, 22, 40, 0) 0%, rgba(10, 22, 40, 0.8) 100%);
     
     /* Shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(217 33% 5% / 0.5);
-    --shadow-glow: 0 0 30px hsl(45 92% 53% / 0.3);
-    
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

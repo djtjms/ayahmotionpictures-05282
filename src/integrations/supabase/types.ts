@@ -14,16 +14,111 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      donations: {
+        Row: {
+          amount: number
+          created_at: string | null
+          donor_name: string
+          email: string
+          id: string
+          status: string
+          stripe_payment_intent_id: string | null
+        }
+        Insert: {
+          amount: number
+          created_at?: string | null
+          donor_name: string
+          email: string
+          id?: string
+          status?: string
+          stripe_payment_intent_id?: string | null
+        }
+        Update: {
+          amount?: number
+          created_at?: string | null
+          donor_name?: string
+          email?: string
+          id?: string
+          status?: string
+          stripe_payment_intent_id?: string | null
+        }
+        Relationships: []
+      }
+      media: {
+        Row: {
+          caption: string | null
+          created_at: string | null
+          file_name: string | null
+          file_size: number | null
+          id: string
+          mime_type: string | null
+          type: Database["public"]["Enums"]["media_type"]
+          updated_at: string | null
+          url: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string | null
+          file_name?: string | null
+          file_size?: number | null
+          id?: string
+          mime_type?: string | null
+          type: Database["public"]["Enums"]["media_type"]
+          updated_at?: string | null
+          url: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string | null
+          file_name?: string | null
+          file_size?: number | null
+          id?: string
+          mime_type?: string | null
+          type?: Database["public"]["Enums"]["media_type"]
+          updated_at?: string | null
+          url?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string | null
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: { Args: { user_id: string }; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
+      media_type:
+        | "hero_video"
+        | "synopsis_image"
+        | "cause_image"
+        | "presentation"
+        | "header_logo"
+        | "footer_logo"
+        | "latest_video"
+        | "behind_scenes_video"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +245,18 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+      media_type: [
+        "hero_video",
+        "synopsis_image",
+        "cause_image",
+        "presentation",
+        "header_logo",
+        "footer_logo",
+        "latest_video",
+        "behind_scenes_video",
+      ],
+    },
   },
 } as const
