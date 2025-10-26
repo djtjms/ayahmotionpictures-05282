@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 217 33% 12%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 33% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 45 92% 53%;
+    --primary-foreground: 217 33% 12%;
+
+    --secondary: 217 33% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 92% 53%;
+    --accent-foreground: 217 33% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 45 92% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for Ayah Motion Pictures */
+    --gold: 45 92% 53%;
+    --gold-light: 45 92% 70%;
+    --deep-blue: 217 33% 12%;
+    --charcoal: 220 20% 16%;
+    --off-white: 210 40% 98%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 33% 12%) 0%, hsl(220 20% 16%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 92% 53%) 0%, hsl(45 92% 70%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(10, 22, 40, 0) 0%, rgba(10, 22, 40, 0.8) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(217 33% 5% / 0.5);
+    --shadow-glow: 0 0 30px hsl(45 92% 53% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
