@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MediaManager } from "@/components/admin/MediaManager";
 import { DonationsView } from "@/components/admin/DonationsView";
+import { StripeSettings } from "@/components/admin/StripeSettings";
+import { ContentEditor } from "@/components/admin/ContentEditor";
 import { LogOut } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -91,16 +93,22 @@ const Admin = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <Tabs defaultValue="hero" className="w-full">
-          <TabsList className="grid w-full grid-cols-7 mb-8">
+        <Tabs defaultValue="content" className="w-full">
+          <TabsList className="grid w-full grid-cols-9 mb-8">
+            <TabsTrigger value="content">Content</TabsTrigger>
             <TabsTrigger value="hero">Hero</TabsTrigger>
             <TabsTrigger value="logos">Logos</TabsTrigger>
             <TabsTrigger value="videos">Videos</TabsTrigger>
             <TabsTrigger value="synopsis">Synopsis</TabsTrigger>
             <TabsTrigger value="causes">Causes</TabsTrigger>
             <TabsTrigger value="presentation">Presentation</TabsTrigger>
+            <TabsTrigger value="stripe">Stripe</TabsTrigger>
             <TabsTrigger value="donations">Donations</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="content">
+            <ContentEditor />
+          </TabsContent>
 
           <TabsContent value="hero">
             <MediaManager type="hero_video" title="Hero Video" acceptedTypes="video/*" />
@@ -130,6 +138,10 @@ const Admin = () => {
 
           <TabsContent value="presentation">
             <MediaManager type="presentation" title="Presentations" acceptedTypes=".pptx,.pdf" multiple />
+          </TabsContent>
+
+          <TabsContent value="stripe">
+            <StripeSettings />
           </TabsContent>
 
           <TabsContent value="donations">

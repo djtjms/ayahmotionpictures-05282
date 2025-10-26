@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -81,7 +82,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-6">
               <button onClick={() => scrollToSection("home")} className="text-foreground hover:text-primary transition-colors">
                 Home
               </button>
@@ -97,12 +98,16 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
               <Button variant="ghost" size="sm" onClick={() => window.location.href = "/auth"}>
                 Admin
               </Button>
+              <ThemeToggle />
             </nav>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="md:hidden flex items-center gap-2">
+              <ThemeToggle />
+              <button className="text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
